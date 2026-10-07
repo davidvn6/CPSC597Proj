@@ -1,0 +1,4 @@
+split,NORMAL,PNEUMONIA,total,pneumonia_pct
+train,1341,3875,5216,74.3
+val,8,8,16,50.0
+test,234,390,624,62.5

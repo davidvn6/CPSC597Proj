@@ -1,0 +1,4 @@
+split,NORMAL,PNEUMONIA,total,dataset_pct,pneumonia_pct
+train,1104,2969,4073,69.93,72.89
+val,237,640,877,15.06,72.98
+test,238,636,874,15.01,72.77

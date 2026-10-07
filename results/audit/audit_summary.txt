@@ -1,0 +1,40 @@
+Total readable images: 5856
+Corrupt/unreadable files: 0
+
+Readable images per split/class:
+label  NORMAL  PNEUMONIA  total  pneumonia_pct
+split                                         
+train    1341       3875   5216           74.3
+val         8          8     16           50.0
+test      234        390    624           62.5
+
+Pneumonia subtype counts (from filenames):
+ptype  bacterial  viral
+split                  
+test         242    148
+train       2530   1345
+val            8      0
+
+Image width and height summary:
+        width  height
+count  5856.0  5856.0
+mean   1328.0   971.0
+std     364.0   383.0
+min     384.0   127.0
+25%    1056.0   688.0
+50%    1281.0   888.0
+75%    1560.0  1187.0
+max    2916.0  2713.0
+
+Color modes:
+mode
+L      5573
+RGB     283
+
+Identical-file duplicates (same MD5): 62 images in 30 groups
+Duplicate groups spanning multiple splits: 0
+Candidate patient IDs parsed from filenames: 3118 unique IDs (5856/5856 images matched)
+Candidate IDs appearing in multiple splits: 170
+  Example overlapping IDs: person1, person10, person100, person101, person102, person103, person104, person108, person109, person11
+
+Limitations: Filename-derived IDs are not verified patient identities. MD5 detects identical file contents, not all visually identical or near-duplicate images.

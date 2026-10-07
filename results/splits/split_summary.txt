@@ -1,0 +1,18 @@
+Random seed: 42
+Input images: 5856
+Redundant identical-file copies excluded: 32
+Retained images: 5824
+Connected groups: 3117
+Target proportions: {'train': 0.7, 'val': 0.15, 'test': 0.15}
+
+label  NORMAL  PNEUMONIA  total  dataset_pct  pneumonia_pct
+split                                                      
+train    1104       2969   4073        69.93          72.89
+val       237        640    877        15.06          72.98
+test      238        636    874        15.01          72.77
+
+Grouping uses filename-derived candidate IDs and file hashes.
+Actual patient identity and independence are unverified.
+Whole-group allocation produces approximate split proportions.
+The supplied splits have been replaced by custom assignments.
+Original image files were not changed or deleted.
