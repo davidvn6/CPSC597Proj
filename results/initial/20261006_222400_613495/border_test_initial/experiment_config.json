@@ -1,0 +1,18 @@
+{
+  "checkpoint_epoch": 29,
+  "validation_images": 877,
+  "threshold": 0.5,
+  "image_size": 224,
+  "border_fraction_per_side": 0.05,
+  "border_pixels_per_side": 11,
+  "fraction_of_image_pixels_masked": 0.18678252551020402,
+  "conditions": [
+    "original",
+    "border_black",
+    "border_mean"
+  ],
+  "mean_fill": "mean intensity of each original resized image",
+  "mask_applied": "after resizing and scaling to [0,1]",
+  "test_set_used": false,
+  "model_retrained": false
+}
