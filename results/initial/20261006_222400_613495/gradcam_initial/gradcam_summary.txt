@@ -1,0 +1,12 @@
+Checkpoint epoch: 29
+Examples generated: 12
+Sampling seed: 42
+Source split: validation
+Target score: PNEUMONIA logit for every example
+Target features: final convolution's ReLU output, before final max pooling
+Maps are normalized separately for each image.
+Heatmap intensity is not comparable across images.
+Zero maps indicate no positive contribution at this target layer.
+Figures display resized model inputs, not original-resolution images.
+Heatmaps do not verify clinical disease localization.
+The model was not retrained and the test set was not used.
