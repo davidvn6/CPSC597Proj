@@ -1,0 +1,40 @@
+{
+  "architecture": "InitialCNN: channels 16,32,64,128",
+  "seed": 42,
+  "image_size": 224,
+  "color_mode": "grayscale",
+  "pixel_range": [
+    0,
+    1
+  ],
+  "resize_method": "resize to square; aspect ratio may change",
+  "augmentation": {
+    "rotation_degrees": 5,
+    "translation_fraction": 0.03,
+    "training_only": true
+  },
+  "batch_size": 16,
+  "max_epochs": 30,
+  "learning_rate": 0.001,
+  "patience": 5,
+  "optimizer": "Adam",
+  "class_weights": [
+    1.8446557971014492,
+    0.6859211855843719
+  ],
+  "class_mapping": {
+    "NORMAL": 0,
+    "PNEUMONIA": 1
+  },
+  "decision_threshold": 0.5,
+  "checkpoint_selection": "lowest weighted validation loss",
+  "train_images": 4073,
+  "val_images": 877,
+  "torch_version": "2.14.1+cu126",
+  "torchvision_version": "0.29.1+cu126",
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "split_file_sha256": {
+    "train.csv": "8806465e0cbd63e0ff30d04781b238d7124a4e0581eb101a75b2b1d84ec5041c",
+    "val.csv": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f"
+  }
+}
