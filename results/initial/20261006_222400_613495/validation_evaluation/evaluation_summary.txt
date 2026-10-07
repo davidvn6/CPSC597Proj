@@ -1,0 +1,24 @@
+Checkpoint epoch: 29
+Validation images: 877
+Decision threshold: 0.5
+
+              precision    recall  f1-score   support
+
+      NORMAL     0.8378    0.9156    0.8750       237
+   PNEUMONIA     0.9676    0.9344    0.9507       640
+
+    accuracy                         0.9293       877
+   macro avg     0.9027    0.9250    0.9129       877
+weighted avg     0.9326    0.9293    0.9303       877
+
+Specificity: 0.9156
+ROC-AUC: 0.9774
+True negatives: 217
+False positives: 20
+False negatives: 42
+True positives: 598
+
+These results use the validation set employed for model selection.
+They are not independent final test results.
+Pneumonia scores are not calibrated clinical probabilities.
+The test set was not used.
