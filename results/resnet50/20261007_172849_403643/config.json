@@ -1,0 +1,59 @@
+{
+  "architecture": "ResNet50CNN",
+  "pretrained_weights": "ResNet50_Weights.IMAGENET1K_V2",
+  "seed": 42,
+  "image_size": 224,
+  "geometry": "square resize without center cropping",
+  "input": "grayscale repeated across three channels",
+  "normalization_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalization_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "augmentation": {
+    "rotation_degrees": 5,
+    "translation_fraction": 0.03,
+    "training_only": true
+  },
+  "batch_size": 8,
+  "max_epochs": 30,
+  "head_epochs": 3,
+  "head_learning_rate": 0.001,
+  "final_block_learning_rate": 0.0001,
+  "patience": 5,
+  "optimizer": "Adam",
+  "optimizer_reset_at_finetuning": true,
+  "fine_tuned_modules": [
+    "network.layer4",
+    "network.fc"
+  ],
+  "frozen_batchnorm_statistics": "fixed outside layer4",
+  "classifier_dropout": 0.3,
+  "class_weights": [
+    1.8446557971014492,
+    0.6859211855843719
+  ],
+  "class_mapping": {
+    "NORMAL": 0,
+    "PNEUMONIA": 1
+  },
+  "decision_threshold": 0.5,
+  "checkpoint_selection": "lowest weighted validation loss",
+  "mixed_precision_training": true,
+  "validation_precision": "float32",
+  "train_images": 4073,
+  "val_images": 877,
+  "initial_run": "20261006_222400_613495",
+  "torch_version": "2.14.1+cu126",
+  "torchvision_version": "0.29.1+cu126",
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "split_file_sha256": {
+    "train.csv": "8806465e0cbd63e0ff30d04781b238d7124a4e0581eb101a75b2b1d84ec5041c",
+    "val.csv": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f"
+  }
+}

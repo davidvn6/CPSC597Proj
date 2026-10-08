@@ -1,0 +1,7 @@
+Best epoch: 8
+Best stage: finetune
+Best validation loss: 0.0931
+Epochs completed: 13
+Total training time: 24.8 minutes
+Model selection used validation loss.
+The test set was not used.
