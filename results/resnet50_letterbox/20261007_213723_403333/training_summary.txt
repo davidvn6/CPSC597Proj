@@ -1,0 +1,16 @@
+ResNet-50 letterbox training
+Preprocessing: aspect-preserving resize with black padding
+Training images: 4073
+Validation images: 877
+Best epoch: 10
+Best stage: finetune
+Best validation loss: 0.1087
+Epochs completed: 15
+Total training time: 28.7 minutes
+
+The run started from ImageNet-pretrained weights.
+It did not continue training the square-resize checkpoint.
+Model selection used weighted validation loss.
+Patient independence remains unverified.
+This comparison includes aspect preservation and padding together.
+The test set was not used.
