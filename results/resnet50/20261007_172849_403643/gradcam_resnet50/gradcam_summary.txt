@@ -1,0 +1,24 @@
+Selected training run: C:\Users\david\Downloads\CPSC597Proj\results\resnet50\20261007_172849_403643
+Checkpoint epoch: 8
+Examples generated: 18
+Target layer: network.layer4
+Target score: PNEUMONIA logit for every image
+Decision threshold: 0.5
+Score tolerance: 0.005
+Largest absolute score difference: 0.00186646
+All recomputed classifications match the saved predictions.
+
+Shared examples match the InitialCNN image selection.
+Additional examples come from remaining ResNet-50 errors.
+Outcome labels come from the saved validation evaluation.
+
+Each heatmap is normalized independently.
+Heatmap intensity is not comparable across images or models.
+The models use different target layers and architectures.
+A zero map means no positive Grad-CAM contribution was obtained.
+These maps do not show contributions supporting the NORMAL class.
+Grad-CAM does not verify pneumonia localization or clinical validity.
+
+The saved evaluation predictions were not modified.
+The model was not retrained.
+The test set was not used.
