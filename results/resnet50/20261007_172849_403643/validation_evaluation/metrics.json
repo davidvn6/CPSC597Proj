@@ -1,0 +1,16 @@
+{
+  "split": "validation",
+  "checkpoint_epoch": 8,
+  "images": 877,
+  "threshold": 0.5,
+  "accuracy": 0.9680729760547321,
+  "precision": 0.9919614147909968,
+  "recall": 0.9640625,
+  "specificity": 0.9789029535864979,
+  "f1": 0.9778129952456418,
+  "roc_auc": 0.9959585970464135,
+  "true_negatives": 232,
+  "false_positives": 5,
+  "false_negatives": 23,
+  "true_positives": 617
+}

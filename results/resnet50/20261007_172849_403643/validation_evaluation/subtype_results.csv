@@ -1,0 +1,5 @@
+model,subtype,images,false_negatives,recall
+ResNet50,bacterial,413,8,0.9806295399515739
+ResNet50,viral,227,15,0.933920704845815
+InitialCNN,bacterial,413,17,0.9588377723970944
+InitialCNN,viral,227,25,0.8898678414096917

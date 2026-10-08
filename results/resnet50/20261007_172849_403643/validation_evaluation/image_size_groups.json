@@ -1,0 +1,12 @@
+{
+  "measure": "original width multiplied by height",
+  "boundaries": [
+    72446.0,
+    704000.0,
+    1136768.0,
+    1770552.0,
+    6882732.0
+  ],
+  "definition": "validation pixel-area quantiles",
+  "note": "Image size is not a clinical severity measure."
+}

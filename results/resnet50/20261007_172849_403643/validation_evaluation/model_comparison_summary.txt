@@ -1,0 +1,6 @@
+Paired validation comparison:
+comparison_category
+both_correct             804
+corrected_by_resnet50     45
+both_wrong                17
+new_error_in_resnet50     11

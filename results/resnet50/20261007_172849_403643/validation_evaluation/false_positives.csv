@@ -1,0 +1,6 @@
+original_split,label,file,path,width,height,mode,md5,patient,ptype,group_id,split,target,pneumonia_score,predicted_target,predicted_label,correct,outcome,size_group
+test,NORMAL,NORMAL2-IM-0256-0001.jpeg,chest_xray_dataset\test\NORMAL\NORMAL2-IM-0256-0001.jpeg,984,496,L,13d8604137de5b7e162dc5443c1d8bb1,NORMAL2-IM-0256,,144,val,0,0.9999916553497314,1,PNEUMONIA,False,FP,Q1
+test,NORMAL,NORMAL2-IM-0198-0001.jpeg,chest_xray_dataset\test\NORMAL\NORMAL2-IM-0198-0001.jpeg,1960,1688,L,ba2f4c91d4e1c1de4745dbc8de875703,NORMAL2-IM-0198,,121,val,0,0.9135067462921143,1,PNEUMONIA,False,FP,Q4
+train,NORMAL,IM-0164-0001.jpeg,chest_xray_dataset\train\NORMAL\IM-0164-0001.jpeg,1202,808,L,f08dc3dfb7921825607810b439240605,IM-0164,,649,val,0,0.9029679894447327,1,PNEUMONIA,False,FP,Q2
+train,NORMAL,IM-0178-0001.jpeg,chest_xray_dataset\train\NORMAL\IM-0178-0001.jpeg,1646,1124,L,9386687ce4936393d300f41f18c4e3d9,IM-0178,,656,val,0,0.8978315591812134,1,PNEUMONIA,False,FP,Q4
+test,NORMAL,NORMAL2-IM-0233-0001.jpeg,chest_xray_dataset\test\NORMAL\NORMAL2-IM-0233-0001.jpeg,1560,1008,L,683ea40ee8eda847df77021caef4b178,NORMAL2-IM-0233,,134,val,0,0.8946634531021118,1,PNEUMONIA,False,FP,Q3

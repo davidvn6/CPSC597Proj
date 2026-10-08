@@ -1,0 +1,39 @@
+Checkpoint epoch: 8
+Validation images: 877
+Decision threshold: 0.5
+
+              precision    recall  f1-score   support
+
+      NORMAL     0.9098    0.9789    0.9431       237
+   PNEUMONIA     0.9920    0.9641    0.9778       640
+
+    accuracy                         0.9681       877
+   macro avg     0.9509    0.9715    0.9605       877
+weighted avg     0.9698    0.9681    0.9684       877
+
+Specificity: 0.9789
+ROC-AUC: 0.9960
+True negatives: 232
+False positives: 5
+False negatives: 23
+True positives: 617
+
+Subtype results:
+     model   subtype  images  false_negatives  recall
+  ResNet50 bacterial     413                8  0.9806
+  ResNet50     viral     227               15  0.9339
+InitialCNN bacterial     413               17  0.9588
+InitialCNN     viral     227               25  0.8899
+
+Paired validation comparison:
+comparison_category
+both_correct             804
+corrected_by_resnet50     45
+both_wrong                17
+new_error_in_resnet50     11
+
+Subtype labels come from filenames.
+Image-size analyses are exploratory.
+Scores are not calibrated clinical probabilities.
+Validation was used for model selection.
+The test set was not used.
