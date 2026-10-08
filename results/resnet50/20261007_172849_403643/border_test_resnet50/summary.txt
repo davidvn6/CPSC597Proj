@@ -1,0 +1,17 @@
+Checkpoint epoch: 8
+Validation images: 877
+Decision threshold: 0.5
+Border width: 11 pixels on each side
+Image area masked: 18.68%
+
+   condition  accuracy  recall  specificity  roc_auc  false_negatives  false_positives  prediction_flips  mean_absolute_score_change
+    original    0.9681  0.9641       0.9789   0.9960               23                5                 0                      0.0000
+border_black    0.9692  0.9750       0.9536   0.9944               16               11                23                      0.0285
+ border_mean    0.9715  0.9812       0.9451   0.9943               12               13                29                      0.0310
+
+This is a validation sensitivity experiment.
+Masking may remove anatomy and introduce artificial boundaries.
+It does not isolate text markers or prove shortcut learning.
+Scores are not calibrated clinical probabilities.
+Original images, weights, and split assignments were unchanged.
+The test set was not used.

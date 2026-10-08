@@ -1,0 +1,14 @@
+{
+  "training_run": "C:\\Users\\david\\Downloads\\CPSC597Proj\\results\\resnet50\\20261007_172849_403643",
+  "checkpoint_epoch": 8,
+  "validation_images": 877,
+  "validation_sha256": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f",
+  "image_size": 224,
+  "batch_size": 8,
+  "threshold": 0.5,
+  "border_fraction_requested": 0.05,
+  "border_pixels": 11,
+  "masked_area_fraction": 0.18678252551020402,
+  "masking_before_normalization": true,
+  "largest_original_score_difference": 1.1102230246251565e-16
+}
