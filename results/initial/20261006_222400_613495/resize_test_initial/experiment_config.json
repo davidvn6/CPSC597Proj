@@ -1,0 +1,21 @@
+{
+  "checkpoint_epoch": 29,
+  "validation_images": 877,
+  "image_size": 224,
+  "threshold": 0.5,
+  "conditions": [
+    "square_resize",
+    "aspect_black",
+    "aspect_mean"
+  ],
+  "aspect_resize": "scale longer side to image_size",
+  "padding_position": "centered",
+  "mean_padding": "mean of the resized, unpadded image",
+  "pixel_range": [
+    0,
+    1
+  ],
+  "maximum_control_score_difference": 1.1102230246251565e-16,
+  "model_retrained": false,
+  "test_set_used": false
+}
