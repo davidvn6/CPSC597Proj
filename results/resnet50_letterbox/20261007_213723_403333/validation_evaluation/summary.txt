@@ -1,0 +1,51 @@
+Checkpoint epoch: 10
+Validation images: 877
+Decision threshold: 0.5
+Preprocessing: aspect-preserving resize with black padding
+
+              precision    recall  f1-score   support
+
+      NORMAL     0.9228    0.9578    0.9400       237
+   PNEUMONIA     0.9842    0.9703    0.9772       640
+
+    accuracy                         0.9669       877
+   macro avg     0.9535    0.9641    0.9586       877
+weighted avg     0.9676    0.9669    0.9671       877
+
+Weighted validation loss: 0.1087
+Specificity: 0.9578
+ROC-AUC: 0.9948
+True negatives: 227
+False positives: 10
+False negatives: 19
+True positives: 621
+
+Three-model comparison at threshold 0.5:
+             model  threshold  accuracy  precision  recall  specificity     f1  roc_auc  true_negatives  false_positives  false_negatives  true_positives
+        InitialCNN     0.5000    0.9293     0.9676  0.9344       0.9156 0.9507   0.9774             217               20               42             598
+   ResNet50_square     0.5000    0.9681     0.9920  0.9641       0.9789 0.9778   0.9960             232                5               23             617
+ResNet50_letterbox     0.5000    0.9669     0.9842  0.9703       0.9578 0.9772   0.9948             227               10               19             621
+
+Subtype results:
+             model   subtype  images  false_negatives  recall
+        InitialCNN bacterial     413               17  0.9588
+        InitialCNN     viral     227               25  0.8899
+   ResNet50_square bacterial     413                8  0.9806
+   ResNet50_square     viral     227               15  0.9339
+ResNet50_letterbox bacterial     413                9  0.9782
+ResNet50_letterbox     viral     227               10  0.9559
+
+Paired square-versus-letterbox comparison:
+comparison_category
+both_correct              835
+both_wrong                 15
+new_error_in_letterbox     14
+corrected_by_letterbox     13
+
+Subtype labels come from filenames.
+The comparison includes aspect preservation and padding together.
+Each training condition has one run.
+Validation was used for checkpoint selection.
+These are not independent final test results.
+Scores are not calibrated clinical probabilities.
+The test set was not used.
