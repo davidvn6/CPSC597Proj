@@ -1,0 +1,18 @@
+{
+  "training_run": "C:\\Users\\david\\Downloads\\CPSC597Proj\\results\\resnet50\\20261007_172849_403643",
+  "checkpoint_epoch": 8,
+  "validation_images": 877,
+  "validation_sha256": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f",
+  "image_size": 224,
+  "batch_size": 8,
+  "threshold": 0.5,
+  "conditions": [
+    "square_resize",
+    "aspect_black",
+    "aspect_mean"
+  ],
+  "padding_position": "centered",
+  "mean_padding_source": "unpadded resized image",
+  "padding_before_normalization": true,
+  "largest_reference_score_difference": 1.1102230246251565e-16
+}

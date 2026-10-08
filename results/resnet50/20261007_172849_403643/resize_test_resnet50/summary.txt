@@ -1,0 +1,17 @@
+Checkpoint epoch: 8
+Validation images: 877
+Decision threshold: 0.5
+
+    condition  accuracy  recall  specificity  roc_auc  false_negatives  false_positives  prediction_flips  mean_absolute_score_change
+square_resize    0.9681  0.9641       0.9789   0.9960               23                5                 0                      0.0000
+ aspect_black    0.9339  0.9156       0.9831   0.9936               54                4                32                      0.0416
+  aspect_mean    0.9590  0.9719       0.9241   0.9927               18               18                30                      0.0335
+
+The model was trained with square-resized images.
+Aspect-preserving resize changes geometry and introduces padding.
+Performance changes indicate preprocessing sensitivity.
+They do not prove reliance on aspect-ratio distortion.
+This experiment alone does not establish better training preprocessing.
+Scores are not calibrated clinical probabilities.
+Original images, weights, and split assignments were unchanged.
+The test set was not used.
