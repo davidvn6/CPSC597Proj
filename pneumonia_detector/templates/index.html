@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local chest X-Ray classification and Grad-CAM research demonstration.">
+  <title>PneumoniaDetector · Deep Learning Exploration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="PneumoniaDetector home"><span class="brand-icon">✳</span>PneumoniaDetector</a><div class="header-right"><span class="local-badge"><i></i>LOCAL SESSION</span><span class="project-tag">CPSC 597</span></div></header>
+  <main>
+    <section class="intro"><div><div class="eyebrow">COMPUTER VISION / CHEST RADIOGRAPHY</div><h1>Deep Learning Exploration<br><span>Grad-CAM X-Ray Predication</span></h1><p>Explore a model prediction alongside the image regions<br class="desktop-break"> contributing to its pneumonia score.</p></div><div class="intro-note"><p>Three Stage Prediction</p><span>INPUT · GRAD-CAM · OVERLAY</span></div></section>
+
+    <div class="workspace">
+      <aside class="sidebar">
+        <section class="panel upload-panel"><div class="section-label"><span>01 / IMAGE INPUT</span><span class="step-dot"></span></div><h2>Start with an X-Ray</h2><p class="muted small">Upload a Chest X-Ray Image</p>
+          <label class="dropzone" id="dropzone" for="image-file"><input id="image-file" type="file" accept="image/jpeg,image/png"><span class="upload-icon">↑</span><strong>Drop an image here</strong><span>or click to browse</span><small>JPG, JPEG, PNG · up to 12 MB</small></label>
+          <div class="file-info hidden" id="file-info"><div><strong id="file-name"></strong><span id="file-details"></span></div><button id="remove-file" class="icon-button" aria-label="Remove selected image">×</button></div>
+          <button class="primary-button" id="analyze-button" disabled><span id="analyze-label">Analyze X-Ray and Predict</span><span id="analyze-arrow">↗</span></button>
+          <div class="error hidden" id="error" role="alert"></div><p class="privacy-note">◈ Processed locally. Images are not saved by the app.</p>
+        </section>
+        <section class="panel model-panel"><div class="section-label"><span>02 / MODEL PERFORMANCE</span><span class="pill">Chosen Model</span></div><div class="model-title"><h2>ResNet-50</h2></div><p class="muted small">Pre-trained and fine-tuned for chest X-Rays</p>
+          <div class="metric-hero"><span id="accuracy">96.22<span>%</span></span><div>Test Accuracy<small id="accuracy-ci">95% CI: 94.80–97.40%</small></div></div>
+          <div class="metric-grid"><div><strong id="recall">98.11%</strong><span>Pneumonia recall</span></div><div><strong id="specificity">91.18%</strong><span>Specificity</span></div><div><strong id="auc">0.99</strong><span>ROC-AUC</span></div><div><strong id="f1">0.97</strong><span>F1 Score</span></div></div>
+          <p class="metric-footnote">Overall Model Performance</p>
+          <details><summary>About the Model &amp; Evaluation</summary><p><strong>How It Works:</strong> ResNet-50 first learned image features from a large image collection. It was then trained on this project's chest X-Rays to classify images as normal or pneumonia.</p><p><strong>How the prediction is chosen:</strong> A pneumonia score at or above the model's cutoff (approximately <span id="model-threshold">—</span>) produces the pneumonia class. A lower score produces the normal class. This cutoff was chosen using validation images before final testing.</p><p><strong>What the metrics mean:</strong> Accuracy is the percentage of test images classified correctly. Pneumonia recall measures how many pneumonia images were detected. Specificity measures how many normal images were classified correctly. F1 combines precision and recall. ROC-AUC measures how well the model separates the two classes across possible cutoffs.</p><p id="device">Loading model information…</p></details>
+        </section>
+      </aside>
+
+      <section class="analysis-panel panel"><div class="analysis-header"><div><div class="section-label">03 / VISUAL EXPLANATION</div><h2>Prediction Explanation and Analysis</h2></div><span class="status" id="status"><i></i>Awaiting image</span></div>
+        <div id="empty-state" class="empty-state"><div class="scan-art" aria-hidden="true"><span class="scan-corner tl"></span><span class="scan-corner tr"></span><span class="scan-corner bl"></span><span class="scan-corner br"></span><svg viewBox="0 0 220 220"><path d="M103 45v47c-9-9-20-16-28-10-15 9-24 31-27 65-2 21 1 30 11 30 14 0 34-12 41-25 5-10 7-33 7-53M117 45v47c9-9 20-16 28-10 15 9 24 31 27 65 2 21-1 30-11 30-14 0-34-12-41-25-5-10-7-33-7-53"/><path d="M110 42v76M72 100l28 15M65 121l34 9M63 143l32 1M148 100l-28 15M155 121l-34 9M157 143l-32 1"/></svg><span class="scan-line"></span></div><h3>Ready when you are</h3><p>Upload an X-Ray to reveal the Model Prediction,<br>Pneumonia Heatmap, and X-Ray Overlay.</p><div class="empty-chips">
+  <span>01 Input</span>
+  <span>02 Model Prediction</span>
+  <span>03 Grad-CAM</span>
+</div></div>
+
+        <div class="hidden" id="results" aria-live="polite">
+          <div class="prediction-banner" id="prediction-banner"><div><span class="eyebrow">MODEL PREDICTION</span><h3 id="prediction-label"></h3><p id="prediction-description"></p></div><div class="prediction-score"><span id="prediction-score"></span><small>Pneumonia score</small></div></div>
+          <p class="score-explanation">The pneumonia score ranges from 0 to 1. Higher scores favor the pneumonia class.</p>
+          <div class="image-grid"><figure><div class="figure-header"><span>01 / INPUT</span><button id="toggle-input" class="text-button">Show original</button></div><div class="image-stage"><img id="input-image" alt="Square-resized grayscale X-Ray used by the model"></div><figcaption id="input-caption">Square-resized model input · 224 × 224</figcaption></figure><figure><div class="figure-header"><span>02 / GRAD-CAM</span><span class="mini-label">PNEUMONIA TARGET</span></div><div class="image-stage"><canvas id="heatmap-canvas" width="224" height="224" role="img" aria-label="Positive pneumonia-target Grad-CAM heatmap"></canvas></div><figcaption>Relative positive contribution</figcaption></figure><figure><div class="figure-header"><span>03 / OVERLAY</span><button class="text-button" id="download-overlay">↓ PNG</button></div><div class="image-stage"><canvas id="overlay-canvas" width="224" height="224" role="img" aria-label="Grad-CAM overlay on the model input"></canvas></div><figcaption>Heatmap aligned to the model input</figcaption></figure></div>
+          <div class="visual-controls"><label class="opacity-control" for="opacity">Overlay strength <input id="opacity" type="range" min="0" max="100" value="55"><output id="opacity-value">55%</output></label><label for="palette">Color map <select id="palette"><option value="ember">Ember</option><option value="viridis">Viridis</option></select></label><div class="legend"><span>Lower</span><span id="legend-gradient"></span><span>Higher</span></div></div>
+          <div class="result-note" id="result-note"></div><div class="result-meta"><span id="image-meta"></span><span id="time-meta"></span></div><div class="export-row"><span>Keep a record of this analysis.</span><div><button class="secondary-button" id="download-json">↓ Result JSON</button><button class="secondary-button" id="download-bundle">↓ Figures & result</button></div></div>
+        </div>
+        <div class="analysis-footer"><span class="note-symbol">i</span><p><strong>CPSC 597 Project Demonstration</strong></p></div>
+      </section>
+    </div>
+    <section class="method-strip"><div><span class="method-number">01</span><div><strong>Chosen Model</strong><p>Pre-trained model chosen to evaluate inputted Chest X-Ray.</p></div></div><div><span class="method-number">02</span><div><strong>Grad-CAM Image Mapping</strong><p>Input, positive Grad-CAM, and overlay shown together.</p></div></div><div><span class="method-number">03</span><div><strong>Local Deployment</strong><p>Patient privacy maintained as image uploads and analysis stay locally on the computer.</p></div></div></section>
+  </main><footer><span>PneumoniaDetector / CPSC 597 Graduate Project</span><span>Pneumonia Detection & Explainable Deep Learning Model</span></footer>
+</body></html>
