@@ -1,0 +1,49 @@
+{
+  "selection_dataset": "validation",
+  "selection_rule": "maximize balanced accuracy",
+  "tie_breakers": [
+    "higher specificity",
+    "threshold closest to 0.5",
+    "lower threshold"
+  ],
+  "prediction_rule": "pneumonia_score >= threshold",
+  "test_set_used": false,
+  "models": {
+    "InitialCNN": {
+      "run": "results\\initial\\20261006_222400_613495",
+      "checkpoint": "results\\initial\\20261006_222400_613495\\best_model.pt",
+      "checkpoint_sha256": "77f45b07a5e45c605459c264fc006e154500aca5d67587ab2555ac0c820b06b0",
+      "checkpoint_epoch": 29,
+      "validation_csv_sha256": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f",
+      "validation_predictions_sha256": "8ea2d55261938d99b06d7296853f7739e3e58f87750a5a8b449784e863f343f6",
+      "validation_images": 877,
+      "threshold": 0.6247491240501404,
+      "reference_threshold": 0.5,
+      "preprocessing": "grayscale_square_resize"
+    },
+    "ResNet50_square": {
+      "run": "results\\resnet50\\20261007_172849_403643",
+      "checkpoint": "results\\resnet50\\20261007_172849_403643\\best_model.pt",
+      "checkpoint_sha256": "7919b9b8d02a3fa1c53933e9d04838a33d014e10be4049e076b0633d70f81ce6",
+      "checkpoint_epoch": 8,
+      "validation_csv_sha256": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f",
+      "validation_predictions_sha256": "eff8e118d641eea4e546e86488afad334a8a029bd7eeeff0c0bc7a1eb3dc095f",
+      "validation_images": 877,
+      "threshold": 0.2014746069908142,
+      "reference_threshold": 0.5,
+      "preprocessing": "square_resize_imagenet_normalization"
+    },
+    "ResNet50_letterbox": {
+      "run": "results\\resnet50_letterbox\\20261007_213723_403333",
+      "checkpoint": "results\\resnet50_letterbox\\20261007_213723_403333\\best_model.pt",
+      "checkpoint_sha256": "a122f57e78164c180f9a842ab73fb8450dcb5ef647ad62faf4137f851e7f54e2",
+      "checkpoint_epoch": 10,
+      "validation_csv_sha256": "c38c3abfbc48d69b4af499a32a5fda6b70bb4c44e0a5735060f84acd1d0ab17f",
+      "validation_predictions_sha256": "ef3ffd113946aed9871fe0f50271fe8d4d40bef06f8dc83643fbf2c5dae86293",
+      "validation_images": 877,
+      "threshold": 0.71255946,
+      "reference_threshold": 0.5,
+      "preprocessing": "aspect_preserving_black_letterbox_imagenet_normalization"
+    }
+  }
+}

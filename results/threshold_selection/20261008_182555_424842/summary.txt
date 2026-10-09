@@ -1,0 +1,20 @@
+Threshold selection used validation predictions only.
+Rule: maximize balanced accuracy.
+Balanced accuracy = (pneumonia recall + specificity) / 2.
+
+             model             setting  threshold  accuracy  balanced_accuracy   recall  specificity  false_negatives  false_positives
+        InitialCNN           fixed_0.5   0.500000  0.929304           0.924993 0.934375     0.915612               42               20
+        InitialCNN validation_selected   0.624749  0.922463           0.929605 0.914062     0.945148               55               13
+   ResNet50_square           fixed_0.5   0.500000  0.968073           0.971483 0.964063     0.978903               23                5
+   ResNet50_square validation_selected   0.201475  0.978335           0.974529 0.982812     0.966245               11                8
+ResNet50_letterbox           fixed_0.5   0.500000  0.966933           0.964059 0.970313     0.957806               19               10
+ResNet50_letterbox validation_selected   0.712559  0.970353           0.973045 0.967187     0.978903               21                5
+
+Exact thresholds are saved in selected_thresholds.json.
+Each model retains its matching preprocessing.
+Validation was also used for checkpoint selection.
+These are development results, not independent test estimates.
+The selection rule is for research, not a clinical requirement.
+Scores are not calibrated clinical probabilities.
+Checkpoint files and saved predictions were not modified.
+The test set was not read or evaluated.
