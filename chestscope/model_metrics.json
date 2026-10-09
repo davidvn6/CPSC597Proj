@@ -1,0 +1,22 @@
+{
+  "accuracy": 0.9622425629290616,
+  "recall": 0.981132075471698,
+  "specificity": 0.9117647058823528,
+  "f1": 0.97423887587822,
+  "roc_auc": 0.9929245283018868,
+  "precision": 0.9674418604651164,
+  "balanced_accuracy": 0.9464483906770256,
+  "accuracy_ci": [
+    0.9479765516700231,
+    0.974011666299802
+  ],
+  "test_images": 874,
+  "candidate_groups": 467,
+  "threshold": 0.2014746069908142,
+  "checkpoint_epoch": 8,
+  "model": "ResNet50_square",
+  "setting": "validation_selected",
+  "source": "Final test evaluation / 20261008_182555_424842",
+  "false_negatives": 12,
+  "false_positives": 21
+}
