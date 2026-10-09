@@ -1,0 +1,13 @@
+model,setting,subtype,images,false_negatives,recall
+InitialCNN,fixed_0.5,bacterial,395,22,0.9443037974683545
+InitialCNN,fixed_0.5,viral,241,23,0.9045643153526971
+InitialCNN,validation_selected,bacterial,395,26,0.9341772151898734
+InitialCNN,validation_selected,viral,241,27,0.8879668049792531
+ResNet50_square,fixed_0.5,bacterial,395,12,0.9696202531645569
+ResNet50_square,fixed_0.5,viral,241,9,0.9626556016597511
+ResNet50_square,validation_selected,bacterial,395,3,0.9924050632911392
+ResNet50_square,validation_selected,viral,241,9,0.9626556016597511
+ResNet50_letterbox,fixed_0.5,bacterial,395,7,0.9822784810126582
+ResNet50_letterbox,fixed_0.5,viral,241,8,0.966804979253112
+ResNet50_letterbox,validation_selected,bacterial,395,9,0.9772151898734177
+ResNet50_letterbox,validation_selected,viral,241,10,0.9585062240663901

@@ -1,0 +1,9 @@
+{
+  "protocol_path": "results\\threshold_selection\\20261008_182555_424842\\selected_thresholds.json",
+  "protocol_sha256": "bcd98e6e9524951d49c97745be135e70424d783bdb7c93f6cde8637ea9ac02df",
+  "test_csv_sha256": "6b1eccc22187dc4e29e3bf3c4b67548dba925c46392393f83131df53d33ceb69",
+  "test_images": 874,
+  "candidate_groups": 467,
+  "bootstrap_seed": 42,
+  "bootstrap_replicates": 2000
+}
